@@ -13,7 +13,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register Library Service to use it with Dependency Injection in Controllers
-builder.Services.AddTransient<ILibraryService, LibraryService>();
 builder.Services.AddTransient<IStoreService, StoreService>();
 
 builder.Services.AddControllers().AddJsonOptions(x =>
