@@ -11,14 +11,14 @@ public class AppDbContext : IdentityDbContext
     {
     }
     
-    /*
+    
     protected override void OnModelCreating(ModelBuilder builder)
     {
 
         builder.Entity<Product>()
             .HasOne(c => c.Category)
             .WithMany(c => c.Products);
-
+        base.OnModelCreating(builder);
     }
-    */
+    
 }
