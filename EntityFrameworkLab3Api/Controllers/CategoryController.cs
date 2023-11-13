@@ -1,10 +1,13 @@
-﻿using EntityFrameworkLab3Api.Models;
+﻿using System.IdentityModel.Tokens.Jwt;
+using EntityFrameworkLab3Api.Models;
 using EntityFrameworkLab3Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EntityFrameworkLab3Api.Controllers;
 
-
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 [ApiController]
 [Route("api/[controller]")]
 
