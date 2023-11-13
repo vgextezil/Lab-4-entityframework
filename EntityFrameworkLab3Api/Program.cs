@@ -4,6 +4,7 @@ using EntityFrameworkLab3Api.Configurations;
 using EntityFrameworkLab3Api.Data;
 using EntityFrameworkLab3Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -50,6 +51,9 @@ builder.Services.AddAuthentication(options =>
         };
 
     });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 
