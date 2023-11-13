@@ -18,6 +18,7 @@ public class ProductController: ControllerBase
         _storeService = storeService;
     }
 
+    
     [HttpGet]
     public async Task<IActionResult> GetProducts()
     {
